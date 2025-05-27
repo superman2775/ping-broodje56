@@ -1,0 +1,18 @@
+# .github/workflows/ping.yml
+
+name: Ping Broodje56 Elk Uur
+
+on:
+  schedule:
+    - cron: '0 * * * *'  # elke uur
+  workflow_dispatch:     # handmatig starten mogelijk
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Verstuur Discord ping
+        run: |
+          curl -X POST -H "Content-Type: application/json" \
+          -d '{"content":"<@1263540796850831434> het is weer tijd! ⏰"}' \
+          https://discord.com/api/webhooks/1376825169615654912/XQzLE5GQgKnT-13Xe3QVnAPbcbtTQ3yvU86MOiaSaectUxlO38tglo7hHeIc7Jm5jO4c
